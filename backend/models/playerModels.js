@@ -27,27 +27,27 @@ export const PlayerSchema = new Schema({
   },
   speed: {
     type: Number,
-    enum: [1, 2, 3],
+    enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   },
   strength: {
     type: Number,
-    enum: [1, 2, 3],
+    enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   },
   endurance: {
     type: Number,
-    enum: [1, 2, 3],
+    enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   },
   ability: {
     type: Number,
-    enum: [1, 2, 3],
+    enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   },
   techniques: {
     type: Number,
-    enum: [1, 2, 3],
+    enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   },
   tactical: {
     type: Number,
-    enum: [1, 2, 3],
+    enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   },
   created_date: {
     type: Date,
