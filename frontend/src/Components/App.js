@@ -39,14 +39,16 @@ class App extends React.Component {
   }
 
   deletePlayer(event) {
-    axios
-      .delete('http://localhost:4000/player/' + event._id)
-      .then(() => {
-        console.log('Player deleted successfully.');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (window.confirm('Delete player?')) {
+      axios
+        .delete('http://localhost:4000/player/' + event._id)
+        .then(() => {
+          console.log('Player deleted successfully.');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 
   render() {
