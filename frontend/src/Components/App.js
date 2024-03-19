@@ -14,6 +14,7 @@ class App extends React.Component {
     };
 
     this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
+    this.deletePlayer = this.deletePlayer.bind(this);
   }
 
   componentDidMount() {
@@ -37,6 +38,17 @@ class App extends React.Component {
     });
   }
 
+  deletePlayer(event) {
+    axios
+      .delete('http://localhost:4000/player/' + event._id)
+      .then(() => {
+        console.log('Player deleted successfully.');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div className='container-fluid'>
@@ -50,13 +62,14 @@ class App extends React.Component {
           </nav>
         </div>
         <div className='row'>
-          <div className='col s3'>
+          <div className='col s4'>
             <PlayerList
               players={this.state.players}
               updateCurrentPlayer={this.updateCurrentPlayer}
+              deletePlayer={this.deletePlayer}
             />
           </div>
-          <div className='col s9'>
+          <div className='col s8'>
             <PlayerSingle player={this.state.currentPlayer} />
           </div>
         </div>
